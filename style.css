@@ -1,85 +1,65 @@
- /* body{
-    background-image: url(todobg.jpeg);
-    background-size: cover;
-    color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    margin: 0;
-    font-size: large;
-}
-#ph{
-    color: black;
-}
- .delete {
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    border-radius: 50%;
-} 
-div {
-     position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-  }
-  ul {
-    list-style: none; 
-    padding: 0;
-    width: 300px; 
-    max-width: 300px;
-    overflow-y:auto ;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    background-color: black;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-}
-
-button.delete {
-    background: none;
-    border: none;
-    color: red; 
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button.delete:hover {
-    color: darkred;
-}  */
 body {
     background-image: url(todobg.jpeg);
     background-size: cover;
-    color: white;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
     margin: 0;
     font-size: large;
+    color: white;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-    width: 350px; /* Adjust as needed */
+    width: 350px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: violet;
+    text-shadow: 1px 1px 4px #000;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: violet;
+    color: white;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    max-height: 300px; 
-    overflow-y: auto; 
-    max-width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    max-width: 100%;
+    margin-top: 15px;
 }
 
 li {
@@ -88,18 +68,57 @@ li {
     justify-content: space-between;
     background-color: black;
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+    margin: 6px 0;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    color: lightgreen;
+}
+
+li.completed .fa-check {
+    color: lightgreen;
+}
+
+button.delete,
+button.complete {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
 button.delete {
-    background: none;
-    border: none;
     color: red;
-    font-size: 18px;
-    cursor: pointer;
 }
 
 button.delete:hover {
     color: darkred;
+}
+
+button.complete {
+    color: lightgreen;
+    margin-right: 10px;
+}
+
+button.complete:hover {
+    color: limegreen;
+}
+
+.task-enter {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
